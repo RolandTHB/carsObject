@@ -1,18 +1,30 @@
 <?php
 
- abstract class Vehicule implements VehiculeInterface
+abstract class Vehicule implements VehiculeInterface
 {
-    protected $marque;
-    protected $model;
-    protected $prix;
+    private $marque;
+    private $model;
+    private $prix;
 
     public function __construct($marque, $model, $prix)
     {
         $this->marque = $marque;
         $this->model = $model;
         $this->prix = $prix;
-
     }
+
+    // __set
+    public function __set($name, $value)
+    {
+        echo"L'attribut n'existe pas ou est privé";
+    }
+
+    // __get
+    public function __get($name)
+    {
+        echo"impossible d'afficher la valeur";
+    }
+
 
     /**
      * @return mixed

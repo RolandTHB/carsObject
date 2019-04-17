@@ -2,12 +2,19 @@
 include 'include.php';
 
 $audiRS1 = new Audi('Audi', 'RS1', 100000, 5, 1, 1, 0);
-$moto = new Yamaha('Kawasaki', 'Z900', 8000, 1,1);
-$s200 = new Yamaha('Yamaha','s200',5222,1,1);
-$R8 = new Audi('Audi','R8',1444,5,1,1,0);
+$z900 = new Kawasaki('Z900', 9200, 1);
+
+$audiRS1->clim = 4;
+echo"<br/>";
+$audiRS1->model = 'Fiat';
+echo"<br/>";
+$audiRS1->isQuatro = 5;
+echo"<br/>";
+echo"$audiRS1->model";
+echo"<br/>";
 
 var_dump($audiRS1);
-var_dump($moto);
-var_dump($s200);
-var_dump($R8);
+var_dump($z900);
+
+
 ?>

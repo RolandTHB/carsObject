@@ -13,5 +13,11 @@ class Kawasaki extends Moto implements KawasakiInterface {
     {
         echo"L'attribut n'existe pas ou est privé";
     }
+
+    // __get
+    public function __get($name)
+    {
+        echo"impossible d'afficher la valeur";
+    }
 }
 ?>

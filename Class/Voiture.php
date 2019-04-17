@@ -1,9 +1,8 @@
 <?php
- abstract class Voiture extends Vehicule {
-    protected $nbPortes;
-    protected $clim;
-    protected $siegeChauffant;
-    private $allowedMark = ["Audi","Renault"];
+abstract class Voiture extends Vehicule {
+    private $nbPortes;
+    private $clim;
+    private $siegeChauffant;
 
     public function __construct($marque, $model, $prix, $nbPortes, $clim, $siegeChauffant)
     {
@@ -11,7 +10,22 @@
         $this->nbPortes = $nbPortes;
         $this->clim = $clim;
         $this->siegeChauffant = $siegeChauffant;
-        new VoitureException($this);
+        try{
+            new VoitureException($this);
+        } catch (Exception $exception){
+            var_dump($exception->getMessage());
+        }
+    }
+
+    // __set
+    public function __set($name, $value)
+    {
+        echo"L'attribut n'existe pas ou est privé";
+    }
+    // __get
+    public function __get($name)
+    {
+        echo"impossible d'afficher la valeur";
     }
 
     /**

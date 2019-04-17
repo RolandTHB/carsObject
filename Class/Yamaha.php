@@ -15,13 +15,22 @@ class Yamaha extends Moto implements YamahaInterface
         $this->isKawai=$isKawai;
     }
 
+    // __set
+    public function __set($name, $value)
+    {
+        echo"L'attribut n'existe pas ou est privé";
+    }
+    // __get
+    public function __get($name)
+    {
+        echo"impossible d'afficher la valeur";
+    }
+
     public function getisKawai()
     {
-        // TODO: Implement getisKawai() method.
     }
 
     public function setisKawai()
     {
-        // TODO: Implement setisKawai() method.
     }
 }
